@@ -37,7 +37,6 @@ public class RPCInvocationHandler implements InvocationHandler {
         }
         //获得服务注册的地址
         String serviceAddress = serviceDiscovery.discovery(serviceName);
-        System.out.println("============" + serviceAddress);
         //远程通信
         RPCNetTransport rpcNetTransport = new RPCNetTransport(serviceAddress);
         Object result = rpcNetTransport.send(request);

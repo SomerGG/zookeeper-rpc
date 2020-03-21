@@ -46,7 +46,6 @@ public class RPCNetTransport {
                             pipeline.addLast("handler", rpcClientHandler);//网络传输事件处理
                         }
                     });
-            System.out.println("--------" +serviceAddress);
             String[] url = serviceAddress.split(":");
             ChannelFuture future = client.connect(url[0], Integer.parseInt(url[1])).sync();//发起异步连接操作
             future.channel().writeAndFlush(request).sync();//将请求发送给服务端

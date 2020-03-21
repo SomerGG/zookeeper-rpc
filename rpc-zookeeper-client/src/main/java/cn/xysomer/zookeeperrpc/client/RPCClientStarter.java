@@ -16,13 +16,12 @@ public class RPCClientStarter {
         ApplicationContext applicationContext = new AnnotationConfigApplicationContext(RPCClientConfig.class);
         RPCClientProxy rpcClientProxy = applicationContext.getBean(RPCClientProxy.class);
         IHelloService helloService = rpcClientProxy.createClientProxy(IHelloService.class,"v2");
-        System.out.println(helloService.sayHello("Somer"));
-//        for (int i = 0; i < 100; i++) {
-//            Thread.sleep(1000);
-//            String sayHello = helloService.sayHello("Somer");
-//            System.out.println(sayHello);
-//            String saveUser = helloService.saveUser(new User("Somer", 18));
-//            System.out.println(saveUser);
-//        }
+        for (int i = 0; i < 100; i++) {
+            Thread.sleep(1000);
+            String sayHello = helloService.sayHello("Somer");
+            System.out.println(sayHello);
+            String saveUser = helloService.saveUser(new User("Somer", 18));
+            System.out.println(saveUser);
+        }
     }
 }
