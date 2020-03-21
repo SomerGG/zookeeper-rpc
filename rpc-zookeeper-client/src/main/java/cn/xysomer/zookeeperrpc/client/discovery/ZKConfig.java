@@ -7,6 +7,7 @@ package cn.xysomer.zookeeperrpc.client.discovery;
  */
 public class ZKConfig {
 
-    public static final String CONNECTION_STR = "47.98.149.94:2181";
+    // zookeeper 集群地址
+    public static final String CONNECTION_STR = "xxxx:2181,xxxx:2181,xxxx:2181";
 
 }
